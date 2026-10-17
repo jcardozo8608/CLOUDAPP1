@@ -5,11 +5,12 @@ const app = express();
 
 const PORT = process.env.PORT || 3000;
 
-// Servir archivos estáticos
-app.use(express.static('views'));
+// Servir archivos estáticos desde la raíz del proyecto
+app.use(express.static(__dirname));
 
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'views', 'index.html'));
+    // Apunta directamente a la raíz en lugar de buscar la carpeta 'views'
+    res.sendFile(path.join(__dirname, 'index.html'));
 });
 
 app.listen(PORT, () => {
