@@ -2,55 +2,104 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CloudApp</title>
-
+    <title>Mi Aplicación Web Personalizada</title>
     <style>
-        body{
+        /* Estilos básicos para cambiar el diseño y colores */
+        body {
             font-family: Arial, sans-serif;
-            background-color: #f4f6f9;
+            background-color: #e0f2fe; /* Color de fondo azul claro */
+            color: #1e3a8a; /* Color de texto azul oscuro */
+            margin: 0;
+            padding: 20px;
+        }
+        nav {
+            background-color: #1e40af; /* Barra de menú azul oscuro */
+            padding: 10px;
             text-align: center;
-            padding-top: 60px;
         }
-
-        .contenedor{
-            background: white;
-            width: 60%;
-            margin: auto;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
         }
-
-        h1{
-            color: #0077cc;
+        .contenido {
+            background-color: white;
+            max-width: 600px;
+            margin: 30px auto;
+            padding: 20px;
+            border-radius: 8px;
         }
-
-        p{
-            font-size: 18px;
+        table, th, td {
+            border: 1px solid #1e40af;
+            border-collapse: collapse;
+            padding: 8px;
+            width: 100%;
+            margin-top: 15px;
+        }
+        form {
+            margin-top: 20px;
+        }
+        input, button {
+            padding: 8px;
+            margin: 5px 0;
+            width: 95%;
+        }
+        button {
+            background-color: #1e40af;
+            color: white;
+            border: none;
+            cursor: pointer;
         }
     </style>
 </head>
 <body>
 
-    <div class="contenedor">
-        <h1>Aplicación en la Nube ☁️</h1>
+    <!-- 1. MENÚ DE NAVEGACIÓN -->
+    <nav>
+        <a href="#">Inicio</a>
+        <a href="#informacion">Datos</a>
+        <a href="#registro">Formulario</a>
+    </nav>
 
-        <p><strong>Estudiante:</strong> Jonnathan Cardozo</p>
+    <div class="contenido">
+        <!-- 2. NOMBRE, MENSAJE E IMAGEN -->
+        <h1>Aplicación de: [Jonnathan Cardozo]</h1>
+        <p>Código Estudiantil: <strong>[001]</strong></p>
+        <p>¡Bienvenido a mi primera aplicación web personalizada desplegada en la nube!</p>
+        
+        <!-- Imagen de ejemplo sobre tecnología -->
+        <img src="https://unsplash.com" alt="Computador" style="display:block; margin:auto; border-radius:4px;">
 
-        <p>La aplicación está alojada en la nube correctamente.</p>
+        <!-- 3. TABLA DE INFORMACIÓN -->
+        <h2 id="informacion">Mis Tecnologías</h2>
+        <table>
+            <tr>
+                <th>Herramientas</th>
+                <th>Función</th>
+            </tr>
+            <tr>
+                <td>GitHub</td>
+                <td>Repositorio de código</td>
+            </tr>
+            <tr>
+                <td>Render</td>
+                <td>Servidor en la nube</td>
+            </tr>
+        </table>
 
-        <p>Servidor funcionando 24/7 desde internet.</p>
-
-        <p id="fecha"></p>
+        <!-- 4. FORMULARIO -->
+        <h2 id="registro">Formulario de Contacto</h2>
+        <form onsubmit="alert('¡Gracias por enviar el formulario!'); return false;">
+            <label>Nombre:</label>
+            <input type="text" placeholder="Escribe tu nombre" required>
+            
+            <label>Correo:</label>
+            <input type="email" placeholder="Escribe tu correo" required>
+            
+            <button type="submit">Enviar Registro</button>
+        </form>
     </div>
-
-    <script>
-        const fecha = new Date();
-
-        document.getElementById("fecha").innerHTML =
-            "Fecha y hora: " + fecha;
-    </script>
 
 </body>
 </html>
